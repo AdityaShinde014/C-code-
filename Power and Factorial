@@ -1,0 +1,26 @@
+#include<stdio.h>
+void main()
+{
+
+float x,y,i,power,factorial;
+
+power=1;
+factorial=1;
+printf("enter x");
+scanf("%f", &x);
+
+printf("enter y");
+scanf("%f", &y);
+
+for(i=0; i<y;i++)
+{
+power=i*power;
+printf("%f", power);
+}
+
+for(i=1; i<y; i++)
+{
+factorial=factorial*i;
+printf("%f", factorial);
+}
+}
