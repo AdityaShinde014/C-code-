@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    float m1, m2, m3, m4, m5, agg;
+
+    printf("Enter marks for m1: ");
+    scanf("%f", &m1);
+
+    printf("Enter marks for m2: ");
+    scanf("%f", &m2);
+
+    printf("Enter marks for m3: ");
+    scanf("%f", &m3);
+
+    printf("Enter marks for m4: ");
+    scanf("%f", &m4);
+
+    printf("Enter marks for m5: ");
+    scanf("%f", &m5);
+
+    agg = (m1 + m2 + m3 + m4 + m5) / 5;
+
+    if (m1 >= 40 && m2 >= 40 && m3 >= 40 && m4 >= 40 && m5 >= 40) {
+        if (agg >= 75) {
+            printf("Distinction\n");
+        } else if (agg >= 60) {
+            printf("First Class\n");
+        } else if (agg >= 50) {
+            printf("Second Class\n");
+        } else if (agg >= 40) {
+            printf("Third Class\n");
+        }
+    } else {
+        printf("Fail\n");
+    }
+
+    printf("Aggregate: %.2f\n", agg);
+
+    return 0;
+}
