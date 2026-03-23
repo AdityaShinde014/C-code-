@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <math.h>
+
+// Function for factorial
+long long factorial(int n) {
+    long long fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+
+int main() {
+    int choice;
+    double x, y, result;
+
+    printf("=== Simple Calculator ===\n");
+
+    do {
+        printf("\n1. Addition\n");
+        printf("2. Subtraction\n");
+        printf("3. Multiplication\n");
+        printf("4. Division\n");
+        printf("5. Power (x^y)\n");
+        printf("6. Factorial (x!)\n");
+        printf("7. Exit\n");
+
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &x, &y);
+                printf("Result = %.2lf\n", x + y);
+                break;
+
+            case 2:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &x, &y);
+                printf("Result = %.2lf\n", x - y);
+                break;
+
+            case 3:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &x, &y);
+                printf("Result = %.2lf\n", x * y);
+                break;
+
+            case 4:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &x, &y);
+                if (y != 0)
+                    printf("Result = %.2lf\n", x / y);
+                else
+                    printf("Division by zero error!\n");
+                break;
+
+            case 5:
+                printf("Enter base and exponent: ");
+                scanf("%lf %lf", &x, &y);
+                printf("Result = %.2lf\n", pow(x, y));
+                break;
+
+            case 6:
+                printf("Enter a number: ");
+                scanf("%lf", &x);
+                if (x >= 0)
+                    printf("Factorial = %lld\n", factorial((int)x));
+                else
+                    printf("Factorial not defined for negative numbers\n");
+                break;
+
+            case 7:
+                printf("Exiting...\n");
+                break;
+
+            default:
+                printf("Invalid choice!\n");
+        }
+
+    } while (choice != 7);
+
+    return 0;
+}
