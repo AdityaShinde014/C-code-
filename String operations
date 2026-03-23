@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <string.h>
+
+// Function to reverse string
+void reverse(char str[]) {
+    int len = strlen(str);
+    for (int i = len - 1; i >= 0; i--) {
+        printf("%c", str[i]);
+    }
+}
+
+// Function to check palindrome
+int isPalindrome(char str[]) {
+    int len = strlen(str);
+    for (int i = 0; i < len / 2; i++) {
+        if (str[i] != str[len - i - 1])
+            return 0;
+    }
+    return 1;
+}
+
+// Function to check substring
+void checkSubstring(char str[], char sub[]) {
+    if (strstr(str, sub) != NULL)
+        printf("Substring found\n");
+    else
+        printf("Substring NOT found\n");
+}
+
+int main() {
+    char str[100], str2[100], sub[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    // i. Length
+    printf("Length of string = %lu\n", strlen(str));
+
+    // ii. Reverse
+    printf("Reversed string = ");
+    reverse(str);
+    printf("\n");
+
+    // iii. Equality check
+    printf("Enter another string for comparison: ");
+    scanf("%s", str2);
+
+    if (strcmp(str, str2) == 0)
+        printf("Strings are equal\n");
+    else
+        printf("Strings are NOT equal\n");
+
+    // iv. Palindrome check
+    if (isPalindrome(str))
+        printf("String is Palindrome\n");
+    else
+        printf("String is NOT Palindrome\n");
+
+    // v. Substring check
+    printf("Enter substring to search: ");
+    scanf("%s", sub);
+
+    checkSubstring(str, sub);
+
+    return 0;
+}
