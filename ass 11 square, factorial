@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int n,i,flag=1,fact=1;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    // square
+    printf("Square = %d\n", n*n);
+
+    // cube
+    printf("Cube = %d\n", n*n*n);
+
+    // sqrt
+    printf("Square root = %.2f\n", sqrt(n));
+
+    // factorial
+    for(i=1;i<=n;i++){
+        fact = fact * i;
+    }
+    printf("Factorial = %d\n", fact);
+
+    // prime check
+    for(i=2;i<=n/2;i++){
+        if(n%i==0){
+            flag=0;
+            break;
+        }
+    }
+
+    if(n<=1)
+        printf("Not Prime\n");
+    else if(flag==1)
+        printf("Prime Number\n");
+    else
+        printf("Not Prime\n");
+
+    return 0;
+}
