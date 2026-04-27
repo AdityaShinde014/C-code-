@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+
+// factorial function
+int fact(int n){
+    int i,f=1;
+    for(i=1;i<=n;i++){
+        f = f * i;
+    }
+    return f;
+}
+
+int main(){
+    float x,sum=0;
+    int n,i;
+
+    printf("Enter x (in radians): ");
+    scanf("%f",&x);
+
+    printf("Enter number of terms: ");
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++){
+        if(i%2==0){
+            sum = sum + (pow(x,2*i+1)/fact(2*i+1));
+        }
+        else{
+            sum = sum - (pow(x,2*i+1)/fact(2*i+1));
+        }
+    }
+
+    printf("Sine value = %f",sum);
+
+    return 0;
+}
