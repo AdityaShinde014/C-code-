@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    long int n;
+    int rem,i=0,dec=0;
+
+    printf("Enter binary number : ");
+    scanf("%ld",&n);
+
+    while(n!=0)
+    {
+        rem=n%10;
+        dec=dec + rem*pow(2,i);
+        n=n/10;
+        i++;
+    }
+
+    printf("Decimal number = %d",dec);
+
+    return 0;
+}
