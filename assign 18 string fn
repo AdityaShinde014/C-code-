@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char s1[100], s2[100], rev[100];
+    int len, i;
+
+    printf("Enter string: ");
+    fgets(s1, sizeof(s1), stdin);
+
+    s1[strcspn(s1, "\n")] = 0;
+
+    len = strlen(s1);
+    printf("Length = %d\n", len);
+
+    for(i = 0; i < len; i++)
+        rev[i] = s1[len - 1 - i];
+
+    rev[len] = '\0';
+
+    printf("Reverse = %s\n", rev);
+
+    if(strcmp(s1, rev) == 0)
+        printf("Palindrome\n");
+    else
+        printf("Not Palindrome\n");
+
+    printf("Enter another string: ");
+    fgets(s2, sizeof(s2), stdin);
+
+    s2[strcspn(s2, "\n")] = 0;
+
+    if(strcmp(s1, s2) == 0)
+        printf("Strings Equal\n");
+    else
+        printf("Strings Not Equal\n");
+
+    if(strstr(s1, s2) != NULL)
+        printf("Substring Found\n");
+    else
+        printf("Substring Not Found\n");
+
+    return 0;
+}
