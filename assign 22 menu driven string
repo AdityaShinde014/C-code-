@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char s1[100], s2[100];
+    int ch;
+
+    printf("Enter string: ");
+    fgets(s1, sizeof(s1), stdin);
+
+    printf("\n1.Length\n2.Copy\n3.Concat\n4.Compare\n");
+    scanf("%d",&ch);
+    getchar();
+
+    switch(ch)
+    {
+        case 1:
+            printf("Length = %d", strlen(s1)-1);
+            break;
+
+        case 2:
+            strcpy(s2, s1);
+            printf("Copied = %s", s2);
+            break;
+
+        case 3:
+            printf("Enter another string: ");
+            fgets(s2, sizeof(s2), stdin);
+            strcat(s1, s2);
+            printf("Concat = %s", s1);
+            break;
+
+        case 4:
+            printf("Enter another string: ");
+            fgets(s2, sizeof(s2), stdin);
+            if(strcmp(s1, s2)==0)
+                printf("Equal");
+            else
+                printf("Not Equal");
+            break;
+    }
+
+    return 0;
+}
