@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(){
+    FILE *fp1, *fp2;
+    char ch;
+
+    // open source file
+    fp1 = fopen("source.txt","r");
+
+    // open destination file
+    fp2 = fopen("dest.txt","w");
+
+    if(fp1==NULL || fp2==NULL){
+        printf("File error\n");
+        return 0;
+    }
+
+    // copy character by character
+    while((ch = fgetc(fp1)) != EOF){
+        fputc(ch, fp2);
+    }
+
+    printf("File copied successfully\n");
+
+    fclose(fp1);
+    fclose(fp2);
+
+    return 0;
+}
